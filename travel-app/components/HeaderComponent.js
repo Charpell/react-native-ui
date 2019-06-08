@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import * as theme from '../theme';
 
-const HeaderComponent = ({ nameOfApp }) => {
+const HeaderComponent = () => {
   return ( 
     <View style={[styles.flex, styles.row, styles.header,]}>
         <View>

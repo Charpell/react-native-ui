@@ -9,7 +9,7 @@ class Destinations extends Component {
   
   render() {
     return (
-      <View style={[ styles.column, styles.destinations ]}>
+      <View style={styles.destinations}>
         <FlatList
           horizontal
           pagingEnabled
@@ -34,9 +34,6 @@ class Destinations extends Component {
 }
 
 const styles = StyleSheet.create({
-  column: {
-    flexDirection: 'column'
-  },
   destinations: {
     flex: 1,
     justifyContent: 'space-between',

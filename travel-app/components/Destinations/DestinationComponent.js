@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Image, Dimensions, Platform } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Octicons from 'react-native-vector-icons/Octicons';
+
+import DestinationInfo from './DestinationInfo';
 
 import * as theme from '../../theme';
 
@@ -35,21 +36,9 @@ const DestinationComponent = ({item, navigation}) => {
             </View>
           </View>
         </ImageBackground>
-          <View style={[styles.column, styles.destinationInfo, styles.shadow]}>
-            <Text style={{ fontSize: theme.sizes.font * 1.25, fontWeight: '500', paddingBottom: 8, }}>
-              {item.title}
-            </Text>
-            <View style={[ styles.row, { justifyContent: 'space-between', alignItems: 'flex-end', }]}>
-              <Text style={{ color: theme.colors.caption }}>
-                {item.description.split('').slice(0, 50)}...
-              </Text>
-              <FontAwesome
-                name="chevron-right"
-                size={theme.sizes.font * 0.75}
-                color={theme.colors.caption}
-              />
-            </View>
-          </View>
+        <DestinationInfo 
+          item={item}
+        />
       </TouchableOpacity>
     )
 }
@@ -91,16 +80,6 @@ const styles = StyleSheet.create({
     fontSize: theme.sizes.font * 2,
     color: theme.colors.white,
     fontWeight: 'bold'
-  },
-  destinationInfo: {
-    position: 'absolute',
-    borderRadius: theme.sizes.radius,
-    paddingHorizontal: theme.sizes.padding,
-    paddingVertical: theme.sizes.padding / 2,
-    bottom: 20,
-    left: (width - (theme.sizes.padding * 4)) / (Platform.OS === 'ios' ? 3.2 : 3),
-    backgroundColor: theme.colors.white,
-    width: width - (theme.sizes.padding * 4),
   }
 });
 
